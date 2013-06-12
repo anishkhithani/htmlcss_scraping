@@ -22,7 +22,7 @@ CSV.open('headlines.csv','w') do |h|
         headline = x.text.gsub("\n","").strip
         link = x.attr("href")
 
-        h << [headline, link]
+        h << [headline, "http://www.thedailybeast.com"+link]
     end
 end
 
