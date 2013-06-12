@@ -1,11 +1,28 @@
 require 'rubygems'
 require 'nokogiri'
 require 'open-uri'
+require 'csv'
 
 #creating a new txt file
 
-File.open ('rates.txt','w') do |f|
-    page = Nokogiri::HTML(open("http://www.x-rates.com/table/?from=CAD&amount=1.00"))
-    country = page.css()
+page = Nokogiri::HTML(open("http://www.thedailybeast.com/cheat-sheets/2013/06/12/cheat-sheet.html"))
+row_data = ["headline","link"]
 
+
+CSV.open('headlines.csv','w') do |h|
+    h << row_data
+    # headlines = page.css('.heading.heading-style-x').text.strip
+    links = page.css('.heading.heading-style-x>a')
+
+
+
+
+    links.each do |x|
+
+        headline = x.text.gsub("\n","").strip
+        link = x.attr("href")
+
+        h << [headline, link]
+    end
 end
+
