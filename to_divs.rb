@@ -21,9 +21,9 @@ File.open('div_links_for_headlines.html', 'w') do |html|
     #         html.write("/div>\n")
     # end
 
-    headlines.for i in 1..29 do
+    for i in 1..29 do
             html.write("<div class ='headline_link'> \n")
-            html.write("<a" headlines[:headline][i] "href=" headlines[:link][i] "</a>\n")
-            html.write("/div>\n")
+            html.write("<a" +" "+ "'"+headlines[:headline][i]+"'" +" "+ "href=" + "'"+headlines[:link][i]+"'>" + "</a>\n")
+            html.write("</div>\n")
         end
 end
