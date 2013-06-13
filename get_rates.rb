@@ -14,15 +14,12 @@ CSV.open('headlines.csv','w') do |h|
     # headlines = page.css('.heading.heading-style-x').text.strip
     links = page.css('.heading.heading-style-x>a')
 
-
-
-
     links.each do |x|
 
         headline = x.text.gsub("\n","").strip
-        link = x.attr("href")
+        link = "http://www.thedailybeast.com"+(x.attr("href"))
 
-        h << [headline, "http://www.thedailybeast.com"+link]
+        h << [headline.to_s, link.to_s]
     end
 end
 
