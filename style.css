@@ -17,7 +17,7 @@ body {
 
 header nav.main ul li{
     display: inline-block;
-    margin: 10px 10px;
+    margin: 10px 40px;
 }
 
 header nav.main ul li a{
@@ -45,11 +45,15 @@ header nav.main ul li a{
     padding: 2.6px;
 }
 
+.headline_link a{
+    vertical-align: middle;
+}
 
-a:link {color:white;}      /* unvisited link */
-a:visited {color:white;}  /* visited link */
-a:hover {color:#FF5E99;}  /* mouse over link */
-a:active {color:#1f1f1f;}  /* selected link */
+
+a:link {color:white;}    /* unvisited link */
+a:visited {color:white;} /* visited link */
+a:hover {color:#FF5E99;} /* mouse over link */
+a:active {color:#1f1f1f;} /* selected link */
 
 
 
@@ -59,8 +63,6 @@ a:active {color:#1f1f1f;}  /* selected link */
     background-color: #1f1f1f;;
 /*    display: block;
 */  font: 100 127px/124px 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
-    margin-left: auto;
-    margin-right: auto;
     color:#FF5E99;
     text-align: center;
 }
